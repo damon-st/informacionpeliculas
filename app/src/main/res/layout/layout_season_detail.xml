@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/imagen_episodio"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                />
+
+
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nombre_espisodio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="start"
+                    android:layout_gravity="top"
+                    android:fontFamily="@font/almendra_sc"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/episodio_numero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="start"
+                    android:layout_gravity="top"
+                    android:fontFamily="@font/almendra_sc"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/clik_ver"
+                    android:text="Leer Informacion"
+                    android:fontFamily="@font/almendra_sc"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:visibility="gone"
+                    android:id="@+id/season_detail_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="start"
+                    android:layout_gravity="top"
+                    android:fontFamily="@font/almendra_sc"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Puntuacion"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/almendra_sc"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    />
+
+                <com.github.lzyzsd.circleprogress.ArcProgress
+                    android:id="@+id/detail_rango"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"
+                    app:arc_finished_color="#5b0260"
+                    app:arc_max="100"
+                    app:arc_suffix_text_padding="0dp"
+                    app:arc_suffix_text_size="12dp"
+                    app:arc_text_color="#5b0260"
+                    app:arc_text_size="16dp"
+                    app:arc_unfinished_color="#cfcfcf"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

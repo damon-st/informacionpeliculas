@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/main_toobal"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    app:contentInsetEnd="0dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetLeft="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/app_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:layout_marginStart="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/app_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="7dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/tool_bar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/main_toobal"
+        android:background="@drawable/tool_bar_shadow"
+        />
+
+    <org.angmarch.views.NiceSpinner
+        android:id="@+id/source_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_bar_shadow"
+        android:background="@drawable/spinner_border"
+        app:textTint="#000"
+        android:padding="20dp"
+        />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/searh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/source_spinner"
+        android:layout_margin="10dp"
+        >
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/query_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:lines="1"
+            android:inputType="text"
+            android:padding="10dp"
+            android:hint="TU TITULO AQUI.."
+            android:textColor="#000000"
+            android:textColorHint="#3939"
+            android:background="@drawable/edit_text_background"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="Buscar"
+            android:id="@+id/query_search_button"
+            android:background="@drawable/background_bottom"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searh_layout">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/results_recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="Resultados de Tu Busqueda"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/results_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searh_layout"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/results_recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="Peliculas Populares"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycler_popular"/>
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="Tv-Series Populares"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycler_popular_tv"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>
