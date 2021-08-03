@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_save" />
 
-    <com.jsibbold.zoomage.ZoomageView
+    <com.damon.peliculasinformacion.Utils.ZoomageView
         android:id="@+id/zoom_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"

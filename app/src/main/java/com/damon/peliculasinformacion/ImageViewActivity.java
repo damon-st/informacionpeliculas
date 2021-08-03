@@ -14,8 +14,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.damon.peliculasinformacion.Utils.ZoomageView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.jsibbold.zoomage.ZoomageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.UUID;
